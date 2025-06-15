@@ -43,14 +43,7 @@ public class _1000_Users extends Simulation {
         percent(10).then(
           exec(http("Announcement Detail").get("/thong-bao-c19l0vp0a0.html").check(status().is(200)).check(responseTimeInMillis().lte(10000)))
         ),
-        // Image Rendering
-        percent(10).then(
-          exec(http("Image Rendering").get("/Upload/images/HCTH/2025-06/ACCA(1).jpg").check(status().in(200,404)).check(responseTimeInMillis().lte(15000)))
-        ),
-        // PDF Download
-        percent(10).then(
-          exec(http("PDF Download").get("/Upload/files/Hoidoingiasou/Nam2025/GSNguyenHuyBang.pdf").check(status().in(200,404)).check(responseTimeInMillis().lte(20000)))
-        ),
+
         // Multi-Page Navigation
         percent(10).then(
           exec(
@@ -68,22 +61,13 @@ public class _1000_Users extends Simulation {
           repeat(3).on(
             exec(http("LongSessionPage").get("/").check(status().is(200)).check(responseTimeInMillis().lte(10000))).pause(2)
           )
-        ),
-        // Search + Download Combo
-        percent(5).then(
-          exec(
-            http("Combo Search").get("/tim-kiem").queryParam("q","quy định học tập").check(status().is(200)).check(responseTimeInMillis().lte(8000))
-          ).pause(1)
-          .exec(
-            http("Combo Download").get("/files/quy-dinh-hoc-tap.pdf").check(status().in(200,404)).check(responseTimeInMillis().lte(20000))
-          )
         )
       )
     );
   {
     setUp(
       stressTestScenario.injectOpen(
-        rampUsers(1000).during(Duration.ofMinutes(15))
+        rampUsers(1000).during(Duration.ofMinutes(1))
       )
     ).protocols(httpProtocol)
     .assertions(

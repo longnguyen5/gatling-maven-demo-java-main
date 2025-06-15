@@ -45,11 +45,11 @@ public class _800_Users extends Simulation {
         ),
         // Image Rendering
         percent(10).then(
-          exec(http("Image Rendering").get("/Upload/images/HCTH/2025-06/ACCA(1).jpg").check(status().in(200,404)).check(responseTimeInMillis().lte(15000)))
+          exec(http("Image Rendering").get("/Upload/images/HCTH/2025-06/ACCA(1).jpg").check(status().in(200,304,404)).check(responseTimeInMillis().lte(15000)))
         ),
         // PDF Download
         percent(10).then(
-          exec(http("PDF Download").get("/Upload/files/Hoidoingiasou/Nam2025/GSNguyenHuyBang.pdf").check(status().in(200,404)).check(responseTimeInMillis().lte(20000)))
+          exec(http("PDF Download").get("/Upload/files/Hoidoingiasou/Nam2025/GSNguyenHuyBang.pdf").check(status().in(200,304,404)).check(responseTimeInMillis().lte(20000)))
         ),
         // Multi-Page Navigation
         percent(10).then(
@@ -75,7 +75,7 @@ public class _800_Users extends Simulation {
             http("Combo Search").get("/tim-kiem").queryParam("q","quy định học tập").check(status().is(200)).check(responseTimeInMillis().lte(8000))
           ).pause(1)
           .exec(
-            http("Combo Download").get("/files/quy-dinh-hoc-tap.pdf").check(status().in(200,404)).check(responseTimeInMillis().lte(20000))
+            http("Combo Download").get("/files/quy-dinh-hoc-tap.pdf").check(status().in(200,304,404)).check(responseTimeInMillis().lte(20000))
           )
         )
       )

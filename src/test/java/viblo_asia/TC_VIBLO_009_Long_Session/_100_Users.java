@@ -44,7 +44,7 @@ public class _100_Users extends Simulation {
             .check(status().in(200, 404))
             .check(responseTimeInMillis().lte(5000))
         )
-        .pause(Duration.ofSeconds(Integer.parseInt("#{duration}")))
+        .pause("#{duration}")
     );
 
   {

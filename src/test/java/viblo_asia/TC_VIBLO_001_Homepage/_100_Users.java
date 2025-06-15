@@ -34,7 +34,7 @@ public class _100_Users extends Simulation {
   {
     setUp(
       homepageLoadScenario.injectOpen(
-        rampUsers(100).during(Duration.ofMinutes(1))
+        rampUsers(200).during(Duration.ofMinutes(1))
       )
     ).protocols(httpProtocol)
     .assertions(

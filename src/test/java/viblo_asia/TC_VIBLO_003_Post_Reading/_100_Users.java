@@ -30,8 +30,8 @@ public class _100_Users extends Simulation {
       Map.of("category", "trending", "postSlug", "react-hooks-guide"),
       Map.of("category", "newest", "postSlug", "nodejs-performance"),
       Map.of("category", "trending", "postSlug", "vue-3-composition-api"),
-      Map.of("category", "newest", "postSlug", "laravel-eloquent-tips"),
-      Map.of("category", "trending", "postSlug", "kubernetes-deployment")
+      Map.of("category", "newest", "postSlug", "nam-2025-ai-lam-sinh-vien-rat-kho-kiem-viec-vay-ta-can-lam-gi-qPoL7KzmLvk"),
+      Map.of("category", "trending", "postSlug", "6-cong-cu-giup-ban-tao-hinh-anh-code-dep-de-chia-se-online-Ny0VG2EyLPA")
     )
   ).random();
 
