@@ -40,14 +40,13 @@ public class _1000_Users extends Simulation {
         System.out.println("User " + session.userId() + " - Short or empty response");
       }
       return session;
-    })
-    .pause(Duration.ofSeconds(3), Duration.ofSeconds(8)); // Longer pause for stress test
-
+    });
+    
   {
     setUp(
       // Test với tổng 1000 users: ramp up trong 5 phút (stress test)
       homepageLoadScenario.injectOpen(
-        rampUsers(1000).during(Duration.ofMinutes(5))
+        rampUsers(1000).during(Duration.ofMinutes(1))
       )
     ).protocols(httpProtocol)
     .assertions(

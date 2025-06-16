@@ -40,14 +40,13 @@ public class _200_Users extends Simulation {
         System.out.println("User " + session.userId() + " - Short or empty response");
       }
       return session;
-    })
-    .pause(Duration.ofSeconds(2), Duration.ofSeconds(5)); // User think time
+    });
 
   {
     setUp(
       // Test với tổng 200 users: ramp up trong 2 phút
       homepageLoadScenario.injectOpen(
-        rampUsers(200).during(Duration.ofMinutes(2))
+        rampUsers(200).during(Duration.ofMinutes(1))
       )
     ).protocols(httpProtocol)
     .assertions(

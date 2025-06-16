@@ -40,8 +40,7 @@ public class _100_Users extends Simulation {
         System.out.println("User " + session.userId() + " - Short or empty response");
       }
       return session;
-    })
-    .pause(Duration.ofSeconds(2), Duration.ofSeconds(5)); // User think time
+    });
 
   {
     setUp(
